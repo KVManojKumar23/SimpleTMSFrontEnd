@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0052CC;">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
+      <div class="logo-container bg-white rounded d-flex align-items-center justify-content-center me-2"
+        style="width: 32px; height: 32px;">
+        <img src="assets/images/icon.png" alt="icon" style="width:auto; height: 41px; object-fit: contain; border-radius: 100%;">
+        <!-- <span class="text-primary fw-bold">ST</span> -->
+      </div>
+      <span class="fw-medium">SimpleTMS</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed"
+      aria-expanded="!isMenuCollapsed" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed">
+      <ul class="navbar-nav me-auto">
+        <!-- Dynamic menu items -->
+        <li class="nav-item" *ngFor="let item of menuItems">
+          <a class="nav-link d-flex align-items-center py-2 px-3"  ariaCurrentWhenActive="page">
+            <i class="bi bi-{{item.icon}} me-2"></i>
+            <span>{{item.label}}</span>
+            <span class="active-indicator"></span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Right-aligned items -->
+      <div class="d-flex align-items-center">
+        <!-- User profile circle (shown when authenticated) -->
+        <div *ngIf="isAuthenticated$ | async; else loginButton" class="d-flex align-items-center">
+          <!-- User button from menuItems -->
+          <a class="nav-link d-flex text-white align-items-center py-2 px-3" routerLink="/user"
+            routerLinkActive="active" ariaCurrentWhenActive="page">
+            <i class="bi bi-person me-2"></i>
+            <span>User</span>
+            <span class="active-indicator"></span>
+          </a>
+
+          <!-- Profile circle -->
+          <a class="nav-link d-flex align-items-center py-2 px-3"  *ngIf="profile"
+             ariaCurrentWhenActive="page">
+
+            <div class="avatar bg-white text-primary rounded-circle d-flex align-items-center justify-content-center"
+              style="width: 32px; height: 32px;">
+              <div class="avatar...">
+                <img *ngIf="profile.imageUrl; else noImage"
+                     [src]="profile.imageUrl"
+                     (error)="handleImageError($event)"
+                     class="w-100 h-100 object-fit-cover rounded-circle"
+                     alt="Profile">
+                <ng-template #noImage>
+                  <i class="bi bi-person-fill text-primary"></i>
+                </ng-template>
+              </div>
+            </div>
+          </a>
+
+          <!-- Logout button -->
+          <button class="btn btn-link nav-link text-white d-flex align-items-center py-2 px-3" (click)="logout()">
+            <i class="bi bi-box-arrow-in-right me-1"></i>
+            <span>Logout</span>
+          </button>
+        </div>
+
+        <!-- Login/Register buttons -->
+        <ng-template #loginButton>
+          <button class="btn btn-outline-light ms-2" routerLink="/register">
+            <i class="bi bi-person-plus me-1"></i> Register
+          </button>
+          <button class="btn btn-outline-light ms-2" routerLink="/login">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Login
+          </button>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</nav>

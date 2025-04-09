@@ -1,0 +1,48 @@
+:root {
+    --primary-blue: #0052CC; /* Jira-like blue */
+    --dark-bg: #172B4D;
+    --light-bg: #F4F5F7;
+}
+.hero-section {
+    background: 
+        linear-gradient(rgba(0, 82, 204, 0.8), 
+        rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 8rem 0;
+    position: relative;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+    background-color: #0052CC;
+    border-color: #0052CC;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0066FF;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+.value-item {
+    border-left: 3px solid var(--primary-blue);
+    padding-left: 1rem;
+}

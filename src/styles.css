@@ -1,0 +1,140 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* ====== CSS Reset (Normalize Styles) ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px; /* Default base size */
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* ====== CSS Variables (Theme Colors) ====== */
+  :root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --white: #ffffff;
+    --black: #000000;
+  }
+  
+  /* ====== Global Typography ====== */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  /* ====== Global Links ====== */
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    color: darkblue;
+  }
+  
+  /* ====== Buttons ====== */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: darkblue;
+  }
+  
+  /* ====== Forms & Inputs ====== */
+  input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+  
+  /* ====== Layout Helpers ====== */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  /* ====== Flex Utilities ====== */
+  .flex {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ====== Grid Layout ====== */
+  .grid {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* ====== Responsive Styles ====== */
+  @media (max-width: 768px) {
+    .grid-2, .grid-3 {
+      grid-template-columns: 1fr;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  }
+  

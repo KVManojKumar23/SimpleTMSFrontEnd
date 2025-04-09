@@ -1,0 +1,54 @@
+/* Jira-inspired navbar styles */
+.navbar {
+  padding: 4px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.logo-container {
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+}
+
+.nav-link {
+  border-radius: 3px;
+  margin: 0 2px;
+  transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.nav-link.active {
+  background-color: rgba(255,255,255,0.2);
+  font-weight: 500;
+}
+
+.active-indicator {
+  display: none;
+}
+
+.nav-link.active .active-indicator {
+  display: block;
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px 2px 0 0;
+}
+
+.input-group {
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.avatar {
+  font-size: 1rem;
+}
+
+.dropdown-menu {
+  max-height: 70vh;
+  overflow-y: auto;
+}

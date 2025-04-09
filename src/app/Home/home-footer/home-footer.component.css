@@ -1,0 +1,29 @@
+/* Footer Styles */
+.footer {
+    background-color: #172b4d !important; /* Jira-like dark blue */
+  }
+  
+  .hover-white:hover {
+    color: white !important;
+    transition: color 0.2s ease;
+  }
+  
+  /* Social icons animation */
+  .bi {
+    transition: transform 0.2s ease;
+  }
+  
+  .bi:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .footer {
+      text-align: center;
+    }
+    
+    .footer .col-md-3 {
+      margin-bottom: 2rem;
+    }
+  }
