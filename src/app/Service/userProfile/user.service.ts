@@ -24,7 +24,7 @@ export class UserService {
       'Authorization': `Bearer ${token}`
     });
 
-    return this.http.get<any>(`${this.apiUrl}/users/${ID}`, { headers }).pipe(
+    return this.http.get<any>(`${this.apiUrl}/users/userById/${ID}`, { headers }).pipe(
       catchError((error: HttpErrorResponse) => {
         let errorMessage = 'An error occurred';
         

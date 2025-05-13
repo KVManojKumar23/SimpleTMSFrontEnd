@@ -83,7 +83,7 @@ export class AuthService {
 
   // =============== User Details Methods ===============
   getUserByEmail(email: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/users/${email}`).pipe(
+    return this.http.get<any>(`${this.baseUrl}/users/userByEmail/${email}`).pipe(
       catchError(error => {
         console.error('Failed to fetch user details:', error);
         return throwError(() => new Error('Failed to load user profile'));
